@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudhanshu Pathak — Chief of Staff & AI Transformation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #ffffff;
+      --bg2:     #f5f4ff;
+      --bg3:     #ece9ff;
+      --accent:  #6c63ff;
+      --accent2: #7c3aed;
+      --accent3: #0ea5e9;
+      --text:    #1a1630;
+      --muted:   #64748b;
+      --border:  rgba(108, 99, 255, 0.18);
+      --card:    #ffffff;
+      --shadow:  0 4px 28px rgba(108, 99, 255, 0.09);
+      --glow:    0 0 40px rgba(108, 99, 255, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .nav-logo span { color: var(--accent3); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 6rem 2rem 5rem;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 55% at 50% -5%, rgba(108, 99, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 35% at 85% 65%, rgba(14, 165, 233, 0.07) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(108, 99, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 99, 255, 0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 80%);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--accent2);
+      margin-bottom: 2rem;
+      font-family: 'JetBrains Mono', monospace;
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-headline {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -2px;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.1rem);
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.85;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .hero-sub strong { color: var(--text); }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #5b52e8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent2);
+      transform: translateY(-2px);
+      background: rgba(108, 99, 255, 0.05);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+
+    .hero-stat {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 1.4rem 1.75rem;
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+      max-width: 270px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-stat-number {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp 1s ease 1s both;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ── Sections ── */
+    section { padding: 7rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.1s;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 540px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.2s;
+    }
+
+    .section-header { margin-bottom: 3.5rem; }
+
+    .in-view .section-label,
+    .in-view .section-title,
+    .in-view .section-subtitle { opacity: 1; transform: translateY(0); }
+
+    /* ── About ── */
+    #about { background: var(--bg2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.8s ease;
+    }
+
+    .in-view .about-left { opacity: 1; transform: translateX(0); }
+
+    .about-left p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+      font-size: 0.975rem;
+    }
+
+    .about-left p strong { color: var(--text); font-weight: 600; }
+
+    blockquote.pull-quote {
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 2rem 0 0;
+      background: rgba(108, 99, 255, 0.06);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.975rem;
+      color: var(--accent2);
+      font-style: italic;
+      line-height: 1.75;
+    }
+
+    .about-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.8s ease 0.2s;
+    }
+
+    .in-view .about-right { opacity: 1; transform: translateX(0); }
+
+    .belief-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+    .belief-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .belief-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      transform: translateY(-2px);
+    }
+
+    .belief-card-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .belief-card-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Services ── */
+    #services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent3));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card:hover {
+      border-color: rgba(108, 99, 255, 0.35);
+      box-shadow: var(--glow);
+      transform: translateY(-4px);
+    }
+
+    .in-view .service-card { opacity: 1; transform: translateY(0); }
+    .in-view .service-card:nth-child(2) { transition-delay: 0.1s; }
+    .in-view .service-card:nth-child(3) { transition-delay: 0.2s; }
+
+    .service-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+
+    .service-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .tag {
+      padding: 0.3rem 0.75rem;
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── Case Studies ── */
+    #work { background: var(--bg2); }
+
+    .work-intro {
+      color: var(--muted);
+      font-size: 0.975rem;
+      line-height: 1.85;
+      max-width: 620px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.3s;
+    }
+
+    .in-view .work-intro { opacity: 1; transform: translateY(0); }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .case-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .case-card:hover {
+      border-color: rgba(108, 99, 255, 0.3);
+      box-shadow: var(--glow);
+      transform: translateY(-3px);
+    }
+
+    .in-view .case-card { opacity: 1; transform: translateY(0); }
+    .in-view .case-card:nth-child(2) { transition-delay: 0.1s; }
+    .in-view .case-card:nth-child(3) { transition-delay: 0.2s; }
+    .in-view .case-card:nth-child(4) { transition-delay: 0.3s; }
+
+    .case-industry {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent3);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .case-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 1rem;
+    }
+
+    .case-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .case-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .highlight-pill {
+      padding: 0.25rem 0.7rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── Contact ── */
+    #contact { background: var(--bg); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.7s ease;
+    }
+
+    .in-view .contact-info { opacity: 1; transform: translateX(0); }
+
+    .contact-desc {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .contact-link:hover { color: var(--accent2); }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .contact-link:hover .contact-icon {
+      border-color: var(--accent);
+      background: rgba(108, 99, 255, 0.08);
+    }
+
+    .open-to {
+      margin-top: 2rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .open-to-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .open-to-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .contact-form-wrap {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.7s ease 0.2s;
+    }
+
+    .in-view .contact-form-wrap { opacity: 1; transform: translateX(0); }
+
+    .form-group { margin-bottom: 1.25rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      resize: none;
+      outline: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #b0aec8; }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+    }
+
+    .form-group textarea { min-height: 140px; }
+
+    .form-status {
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      min-height: 1.2rem;
+    }
+
+    .form-status.success { color: #16a34a; }
+    .form-status.error   { color: #dc2626; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer span { color: var(--accent2); font-weight: 600; }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Floating orbs ── */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 500px; height: 500px;
+      background: rgba(108, 99, 255, 0.07);
+      top: 0%; left: -15%;
+    }
+
+    .orb-2 {
+      width: 350px; height: 350px;
+      background: rgba(14, 165, 233, 0.06);
+      bottom: 5%; right: -5%;
+      animation-delay: -4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-30px) scale(1.04); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; font-size: 0.8rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-right { opacity: 1; transform: none; }
+      .hero-stats { flex-direction: column; align-items: center; }
+      .hero-stat { max-width: 100%; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <div class="nav-logo">sudhanshu<span>.pathak</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">What I've Built</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">Available for engagements · Abu Dhabi, UAE</div>
+
+      <h1 class="hero-headline">
+        Most industries are still running on<br>
+        <span class="gradient-text">gut &amp; Excel.</span><br>
+        I'm changing that —<br>one workflow at a time.
+      </h1>
+
+      <p class="hero-sub">
+        I'm <strong>Sudhanshu Pathak</strong> — Chief of Staff, Business Development Consultant, and ACCA Affiliate. I help traditional businesses in manufacturing, FMCG, pharma, and education move from manual operations to intelligent, scalable systems.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Let's Work Together
+        </a>
+        <a href="#work" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          See My Work
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">4+</div>
+          <div class="hero-stat-label">Ventures simultaneously managed<br>across India &amp; UAE</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">80%</div>
+          <div class="hero-stat-label">Reduction in manual reconciliation<br>via AI automation</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">7%</div>
+          <div class="hero-stat-label">Monthly profit uplift through smart<br>early payment strategy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label">About</div>
+          <h2 class="section-title">I sit where strategy meets <span class="gradient-text">operations.</span></h2>
+          <p>I've been in rooms where traditional businesses decide whether to transform or wait. Most choose to wait — until they can't. My work is about making that decision easier and the transition smoother.</p>
+          <p>With a foundation in <strong>Accounting &amp; Finance (Middlesex University London, ACCA Affiliate)</strong>, I bring financial rigour to every transformation I lead. I don't just propose change — I understand the P&amp;L impact of every system I build or recommend.</p>
+          <p>Currently based in <strong>Abu Dhabi</strong>, working across ventures in AI, venture building, and institutional education.</p>
+          <blockquote class="pull-quote">
+            "Digitalization is no longer optional. It's essential for survival, growth, and relevance in an accelerating world."
+          </blockquote>
+        </div>
+
+        <div class="about-right">
+          <div class="belief-cards">
+            <div class="belief-card">
+              <div class="belief-card-title">Every workflow can be made smarter.</div>
+              <div class="belief-card-body">Whether it's a supply chain process, an accounts payable system, or a student performance tracker — the right technology makes it faster, leaner, and more resilient.</div>
+            </div>
+            <div class="belief-card">
+              <div class="belief-card-title">Finance is the lens, AI is the tool.</div>
+              <div class="belief-card-body">Most transformation fails because it ignores financial constraints. My ACCA background means strategy is always grounded in commercial reality.</div>
+            </div>
+            <div class="belief-card">
+              <div class="belief-card-title">Founders need operators, not just advisors.</div>
+              <div class="belief-card-body">As Chief of Staff, I don't just give direction — I build the systems, coordinate the teams, and make sure things actually happen.</div>
+            </div>
+            <div class="belief-card">
+              <div class="belief-card-title">Speed compounds.</div>
+              <div class="belief-card-body">Businesses that move fast, test fast, and learn fast don't just survive disruption — they define what comes next.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">What I Do</div>
+        <h2 class="section-title">Three ways I create <span class="gradient-text">impact.</span></h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <div class="service-title">AI &amp; Digital Transformation</div>
+          <p class="service-desc">I identify where AI creates measurable ROI for traditional businesses — then build and implement the systems to deliver it. From invoice automation to KPI dashboards, I make operations intelligent end-to-end.</p>
+          <div class="service-tags">
+            <span class="tag">Process Automation</span>
+            <span class="tag">AI Implementation</span>
+            <span class="tag">ERP Integration</span>
+            <span class="tag">Industry 4.0</span>
+            <span class="tag">Digital Roadmapping</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <div class="service-title">Finance &amp; AP Transformation</div>
+          <p class="service-desc">I transform finance operations from manual and fragmented to automated and integrated — covering full AP automation, SCM-finance integration, diagnostic assessments, and gap-to-roadmap delivery.</p>
+          <div class="service-tags">
+            <span class="tag">AP Automation</span>
+            <span class="tag">SCM Integration</span>
+            <span class="tag">Finance Diagnostics</span>
+            <span class="tag">AI in Finance</span>
+            <span class="tag">ERP Posting</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏭</div>
+          <div class="service-title">Industry 4.0 Readiness &amp; AI Adoption</div>
+          <p class="service-desc">I assess where companies currently sit on the automation maturity curve (Level 0 to Level 4) and build the roadmap to get them AI-ready. At Vector11, I work as Project Manager and Business Analyst helping businesses systematically upgrade their operations — department by department, process by process.</p>
+          <div class="service-tags">
+            <span class="tag">Industry 4.0</span>
+            <span class="tag">Automation Maturity</span>
+            <span class="tag">AI Adoption</span>
+            <span class="tag">Business Analysis</span>
+            <span class="tag">Project Management</span>
+            <span class="tag">Change Readiness</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎯</div>
+          <div class="service-title">Chief of Staff / Founders Office</div>
+          <p class="service-desc">I operate as an extension of the founder — owning cross-functional coordination, hiring, strategy execution, and everything that keeps a fast-moving company from falling apart. Done across four simultaneous ventures in India and UAE.</p>
+          <div class="service-tags">
+            <span class="tag">Strategic Operations</span>
+            <span class="tag">Hiring &amp; Onboarding</span>
+            <span class="tag">Cross-functional Coordination</span>
+            <span class="tag">OKR Management</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <div class="service-title">Business Development &amp; Institutional Consulting</div>
+          <p class="service-desc">I help organisations identify and close new business, and help institutions navigate AI adoption — from finance transformation roadmaps to faculty AI readiness programmes. Strategy grounded in evidence, built for execution.</p>
+          <div class="service-tags">
+            <span class="tag">BD Strategy</span>
+            <span class="tag">AI Readiness</span>
+            <span class="tag">Institutional Consulting</span>
+            <span class="tag">Market Entry</span>
+            <span class="tag">Diagnostic Reporting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I've Built -->
+  <section id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">What I've Built</div>
+        <h2 class="section-title">Roles where I did the <span class="gradient-text">actual work.</span></h2>
+        <p class="work-intro">These are not projects I advised on. These are roles I held — where I owned the outcome, built the system, and made it work.</p>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-industry">Venture Studio · Abu Dhabi, UAE</div>
+          <div class="case-title">SapienOne Venture Studio</div>
+          <div class="case-result" style="background:rgba(108,99,255,0.08);border-color:rgba(108,99,255,0.25);color:var(--accent2)">
+            Financial Controller &amp; Chief of Staff
+          </div>
+          <p class="case-desc">I own the entire finance function — budgeting, payroll, bank operations, fund management, and UAE VAT filing. As Chief of Staff, I simultaneously coordinate hiring for founding team roles, manage cross-company workflows, and keep operations running across four ventures at once.</p>
+          <div class="case-highlights">
+            <span class="highlight-pill">Sole finance lead</span>
+            <span class="highlight-pill">Full UAE tax compliance</span>
+            <span class="highlight-pill">Founding team hiring &amp; onboarding</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">Manufacturing / FMCG</div>
+          <div class="case-title">Confidential Manufacturing Client <span style="font-weight:400;font-size:0.85rem;color:var(--muted)">(via BD Consulting)</span></div>
+          <div class="case-result">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            AI &amp; Finance Transformation Lead
+          </div>
+          <p class="case-desc">Designed and deployed an AP automation system that reduced the accounts payable team from 18 to 4 people. Identified that the root cause of the finance problem was supply chain — and fixed it by integrating the AP app with the SCM inbound tool. All invoice types now post to ERP in 30 seconds from upload.</p>
+          <div class="case-highlights">
+            <span class="highlight-pill">18 → 4 headcount</span>
+            <span class="highlight-pill">30-second ERP posting</span>
+            <span class="highlight-pill">Vendor mismatch eliminated</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">AI Transformation Consulting</div>
+          <div class="case-title">Vector11</div>
+          <div class="case-result" style="background:rgba(108,99,255,0.08);border-color:rgba(108,99,255,0.25);color:var(--accent2)">
+            Project Manager &amp; Business Analyst
+          </div>
+          <p class="case-desc">I help companies move from manual, disconnected operations to fully AI-ready environments — progressing them from Level 0 to Level 4 on the Industry 4.0 automation maturity scale. This involves diagnosing current-state operations, mapping gaps, designing transformation roadmaps, and managing implementation end-to-end.</p>
+          <div class="case-highlights">
+            <span class="highlight-pill">I4.0 maturity assessments</span>
+            <span class="highlight-pill">Level 0→4 roadmaps</span>
+            <span class="highlight-pill">Cross-sector delivery</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">FMCG / Manufacturing</div>
+          <div class="case-title">Surya Nepal Private Limited</div>
+          <div class="case-result" style="background:rgba(108,99,255,0.08);border-color:rgba(108,99,255,0.25);color:var(--accent2)">
+            Finance AI Diagnostic Consultant
+          </div>
+          <p class="case-desc">Conducted a full diagnostic of the finance department — mapping as-is operations, identifying automation and AI gaps, and delivering a phased to-be roadmap with prioritised interventions.</p>
+          <div class="case-highlights">
+            <span class="highlight-pill">As-is mapping</span>
+            <span class="highlight-pill">Gap analysis</span>
+            <span class="highlight-pill">AI &amp; automation roadmap</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">AI Education / EdTech</div>
+          <div class="case-title">Skyline Ikigai Intelligence Hub</div>
+          <div class="case-result" style="background:rgba(108,99,255,0.08);border-color:rgba(108,99,255,0.25);color:var(--accent2)">
+            Finance Department Head &amp; BD Consultant
+          </div>
+          <p class="case-desc">Head of finance for Skyline while also working on business development. Skyline operates at the intersection of AI education and institutional transformation — as the sister company of Ikigai School of AI.</p>
+          <div class="case-highlights">
+            <span class="highlight-pill">Finance department leadership</span>
+            <span class="highlight-pill">BD for AI education vertical</span>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-industry">Higher Education · UAE</div>
+          <div class="case-title">Horizon University College, Ajman</div>
+          <div class="case-result">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            AI Assessment Lead (via Ikigai School of AI)
+          </div>
+          <p class="case-desc">Coordinated and delivered a full psychometric AI readiness assessment for all 46 faculty members across Technical, Business, and General tracks. Produced a diagnostic report covering five dimensions of AI readiness and a phased institutional action plan — including an AI Champions Network, track-specific workshops, and a governance framework.</p>
+          <div class="case-highlights">
+            <span class="highlight-pill">46 faculty assessed</span>
+            <span class="highlight-pill">3 tracks · 135 scenario questions</span>
+            <span class="highlight-pill">Full report + recommendations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Let's Talk</div>
+          <h2 class="section-title" style="font-size:clamp(1.5rem,3.5vw,2.2rem)">If you're building something that matters, I want to <span class="gradient-text">hear about it.</span></h2>
+          <p class="contact-desc">Whether you're a founder who needs an operator, a traditional business ready to transform, or an organisation looking for a sharp BD partner — let's have a real conversation.</p>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/sudhanshu-pathak-4927811b8/" target="_blank" class="contact-link">
+              <div class="contact-icon">💼</div>
+              <span>linkedin.com/in/sudhanshu-pathak-4927811b8</span>
+            </a>
+            <div class="contact-link" style="cursor:default">
+              <div class="contact-icon">📍</div>
+              <span>Abu Dhabi, UAE</span>
+            </div>
+          </div>
+          <div class="open-to">
+            <div class="open-to-label">Open To</div>
+            <div class="open-to-items">
+              <span class="tag">Consulting</span>
+              <span class="tag">Chief of Staff roles</span>
+              <span class="tag">Advisory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <!--
+            HOW TO ACTIVATE THIS FORM (takes 2 minutes, free):
+            1. Go to https://formspree.io and sign up with your email
+            2. Click "New Form", give it a name, copy the form ID (looks like "xpwzabcd")
+            3. Replace YOUR_FORM_ID below with that ID
+            4. Save — done. All submissions land in your inbox automatically.
+          -->
+          <form id="contactForm">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label>What are you working on?</label>
+              <textarea name="message" placeholder="Tell me about your business, the challenge you're facing, or the role you're looking to fill..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><span>Sudhanshu Pathak</span> · Chief of Staff &amp; AI Transformation Consultant · Abu Dhabi, UAE &nbsp;&nbsp;·&nbsp;&nbsp; © 2026 · Built with intention.</p>
+  </footer>
+
+  <script>
+    // ── Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(
+      'section, .about-left, .about-right, .contact-info, .contact-form-wrap'
+    ).forEach(el => observer.observe(el));
+
+    // ── Nav shadow on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.boxShadow =
+        window.scrollY > 20 ? '0 4px 24px rgba(108,99,255,0.1)' : 'none';
+    });
+
+    // ── Contact form via Formspree
+    const FORMSPREE_ID = 'mrerkplw'; // <-- replace this with your Formspree form ID
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn    = this.querySelector('button[type=submit]');
+      const status = document.getElementById('formStatus');
+
+      btn.disabled    = true;
+      btn.textContent = 'Sending…';
+      status.textContent = '';
+      status.className   = 'form-status';
+
+      try {
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method:  'POST',
+          body:    new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          status.textContent = '✓ Message sent! I\'ll be in touch soon.';
+          status.className   = 'form-status success';
+          this.reset();
+        } else {
+          throw new Error('server error');
+        }
+      } catch {
+        status.textContent = 'Something went wrong. Please email me directly on LinkedIn.';
+        status.className   = 'form-status error';
+      } finally {
+        btn.disabled  = false;
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
+      }
+
+      setTimeout(() => { status.textContent = ''; status.className = 'form-status'; }, 6000);
+    });
+  </script>
+</body>
+</html>
